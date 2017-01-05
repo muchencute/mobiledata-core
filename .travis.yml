@@ -6,4 +6,4 @@ notifications:
   email: true
 skip_cleanup: true
 after_success:
-  "curl -u $FTP_USER:$FTP_PASSWORD -T target/mobiledata-core.war ftp://$FTP_IP/webapps/"
+  "curl -u $FTP_USER:$FTP_PASSWORD -T target/mobiledata.war ftp://$FTP_IP/webapps/"

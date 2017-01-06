@@ -5,7 +5,9 @@ script: mvn clean package
 notifications:
   email: true
 skip_cleanup: true
-after_success: curl -u $FTP_USER:$FTP_PASSWORD -T target/mobiledata.war ftp://$FTP_IP/webapps/
+deploy:
+  provider: script
+  script: curl -u ftpuser:atp0769AT -T target/mobiledata.war ftp://120.25.85.132/webapps/
 env:
   global:
   - secure: Ruh9NfTYmsyRIku47kDWvZSzGH2nMwDqcyaHcOhHnDLxQV2DqFft5V178Wo9OUWHF0K0J1LGbwlexQJlaxf0EgBumZhHQIu1oZyrvXJWMzbMelokTmI4G6q4HEpbh/sSk8/rWvlkmPKf31S0YQafTmSzKLcdIbaRzc42Uke/2Jn83Oho5Lk99ace46hA59kDaXd/vwXZy8PKG0qiLfqWz8bM4nPohD93cO260wJ1J3QDdjX5FwouJhpQV6ROhFj/MhV8wZRfxX3XshrN2ZvUXUqMfo56lSju4/cqcC7Tg2r8upKpNTWphZf1Niw3xZpfNCe60T2YpPHw2tRzMPFhVEQ6KFnxlpB9Ypw34ghkj1+8b1BjbzNZplWS4wjnQV2MIyfRIcGg06KvKWeMb+wHVGT+8XhCQOBwoCGyKnG0kqJbsls/3i290NgHJMZmjvd/vc45NtdaCt1cQquC47JTFX9OnILGq1jX6kGER7vGq2zEgMKjV3KkSXSJDX8knNWupoCJAxQnzNFHdZiMrfxswZjudDCh2MtHgxzPUG9kVKpu202lY0ElLKtiBYwWJGU4+aPOKyDgoeHNHO1VA/Pa2qfHrIogp/zv8S+PsakMFGv4A7UOv6mUuRwqkq4PvxFkYkX2zqfzOJAjuT7L8Tmj+DpG0rrb0PWN5Oi7TXuo8gA=
